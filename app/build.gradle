@@ -1,0 +1,76 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    //apply plugin: 'kotlin-kapt'
+}
+
+android {
+    namespace 'com.example.sqliteroom'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.example.sqliteroom"
+        minSdk 28
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+
+    implementation 'androidx.core:core-ktx:1.10.1'
+    implementation 'androidx.appcompat:appcompat:1.4.1'
+    implementation 'com.google.android.material:material:1.5.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
+    implementation 'androidx.core:core-ktx:+'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    // for adding recyclerview
+    implementation 'androidx.recyclerview:recyclerview:1.2.0'
+    // for adding cardview
+    implementation 'androidx.cardview:cardview:1.0.0'
+
+
+//    // To use Kotlin annotation processing tool (kapt)
+//    kapt("androidx.room:room-compiler:")
+//    // To use Kotlin Symbol Processing (KSP)
+//    ksp("androidx.room:room-compiler:2.5.2")
+//
+//    // optional - Kotlin Extensions and Coroutines support for Room
+//    implementation("androidx.room:room-ktx:2.5.2")
+//
+//    // optional - RxJava2 support for Room
+//    implementation("androidx.room:room-rxjava2:2.5.2")
+//
+//    // optional - RxJava3 support for Room
+//    implementation("androidx.room:room-rxjava3:2.5.2")
+//
+//    // optional - Guava support for Room, including Optional and ListenableFuture
+//    implementation("androidx.room:room-guava:2.5.2")
+//
+//    // optional - Test helpers
+//    testImplementation("androidx.room:room-testing:2.5.2")
+//
+//    // optional - Paging 3 Integration
+//    implementation("androidx.room:room-paging:2.5.2")
+}
